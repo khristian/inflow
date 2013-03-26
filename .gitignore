@@ -15,10 +15,10 @@
 /tmp
 
 # Ignore db.yml
-/config/*.yml
+#/config/*.yml
 
 # Ignore enviornment and initializers
-/config/environments/development.rb
-/config/initializers/secret_token.rb
-/config/initializers/session_store.rb
-/config/initializers/omniauth.rb
+#/config/environments/development.rb
+#/config/initializers/secret_token.rb
+#/config/initializers/session_store.rb
+#/config/initializers/omniauth.rb
