@@ -11,7 +11,7 @@ development:
   database: inflow_test
   pool: 5
   username: root
-  password: bigkap12
+  password: 
 
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +25,7 @@ test:
   database: inflow_test
   pool: 5
   username: root
-  password: bigkap12
+  password: 
 
 production:
   adapter: sqlite3
