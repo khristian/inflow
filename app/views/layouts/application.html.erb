@@ -7,6 +7,34 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if current_user.nil? %> 
+ <div id="authentication_links">
+  <p>
+  	<div id="twitter_nav_link">
+  	 <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+  	</div>
+  	<div id="facebook_nav_link">
+  	 <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+  	</div> 
+  </p>
+ </div>
+ <% else %>
+ <div id="authentication_links">
+  <p>
+  	<div id="twitter_nav_link">
+  	 You are now signed in as <%= current_user.name %>. 
+  	 <%= link_to "Sign out", "signout" %>
+  	</div>
+  </p>
+ </div> 
+ <% end %>
+ 
+ <div id="flash_message">
+   <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
+   <% end %> 
+ </div>
+
 
 <%= yield %>
 
