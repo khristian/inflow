@@ -23,5 +23,6 @@
 /config/initializers/session_store.rb
 /config/initializers/omniauth.rb
 
-# 
+# Bower related itesm
 /vendor/assets/components
+npm-debug.log
