@@ -4,7 +4,6 @@ gem 'rails', '3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 
 
@@ -38,4 +37,19 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 # Oauth Authentication
-gem "omniauth", "~> 1.1.3"
+#gem "omniauth", "~> 1.1.3"
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem "omniauth-instagram"
+gem 'oauth2'
+
+# Use Thin webserver
+gem "thin", "~> 1.5.1"
+
+# Javascript Engine
+gem 'execjs'
+gem "therubyracer", "~> 0.11.4", :require => 'v8'
+gem "bower-rails", "~> 0.2.1"
+
+
+
