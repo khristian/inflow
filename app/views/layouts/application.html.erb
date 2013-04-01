@@ -5,38 +5,74 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
 <body>
 <% if current_user.nil? %> 
- <div id="authentication_links">
-  <p>
-  	<div id="twitter_nav_link">
-  	 <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-  	</div>
-  	<div id="facebook_nav_link">
-  	 <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-  	</div> 
-  </p>
- </div>
+  <div id="authentication_links">
+   <p>
+     <div id="twitter_nav_link">
+      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+     </div>
+     <div id="facebook_nav_link">
+      <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+     </div> 
+   </p>
+  </div>
  <% else %>
- <div id="authentication_links">
-  <p>
-  	<div id="twitter_nav_link">
-  	 You are now signed in as <%= current_user.name %>. 
-  	 <%= link_to "Sign out", "signout" %>
-  	</div>
-  </p>
- </div> 
- <% end %>
+  <div id="authentication_links">
+   <p>
+    <div id="twitter_nav_link">
+     You are now signed in as <%= current_user.name %>. 
+     <%= link_to "Sign out", "signout" %>
+    </div>
+   </p>
+  </div> 
+<% end %>
  
- <div id="flash_message">
+  <div id="flash_message">
    <% flash.each do |name, msg| %>
     <%= content_tag :div, msg, id: "flash_#{name}" %>
    <% end %> 
- </div>
+  </div>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        
+        <a class="brand" href="#">Some Store</a>
+        
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li><%= link_to "Price List" %></li>
+            <li><%= link_to "Contact Us" %></li>
+            <li><%= link_to "Cart" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<%= yield %>
-
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <h2>About Us</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </div>
+      <div class="span9">
+        <%= yield %>
+      </div>
+      
+    </div>
+  </div>
 </body>
 </html>
